@@ -1,0 +1,2 @@
+# BSODTRIPWIRE
+Causes a bsod

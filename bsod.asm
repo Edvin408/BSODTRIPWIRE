@@ -10,6 +10,11 @@ last resd 1
 section .code
 main:
 sub rsp, 8
+mov rcx, 19
+mov rdx, 1
+mov r8, 0
+lea r9, [last]
+call RtlAdjustPrivilege
 mov rcx, 10000
 call Sleep
 mov DWORD [lii], 8
@@ -29,13 +34,6 @@ test eax, eax
 jz loop
 cmp eax, DWORD[last]
 je loop
-sub rsp, 32
-mov rcx, 19
-mov rdx, 1
-mov r8, 0
-lea r9, [last]
-add rsp, 32
-call RtlAdjustPrivilege
 lea rax, [last]
 push rax
 push 6
